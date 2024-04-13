@@ -88,6 +88,10 @@ main {
   padding-bottom: 3em;
 }
 
+#posts-principais article {
+	position: relative;
+}
+
 #posts-principais {
   padding-top: 1.5em;
 }
@@ -105,6 +109,26 @@ main {
 }
 
 #posts-principais .post .titulo {
+  text-shadow: 1px 1px black;
+  position: absolute;
+  /* top: 24%;
+  left: 58%;
+  transform: translate(-58%, -50%);
+  z-index: 1;
+  right: -53%;
+  background-color: #ffffff80; */
+	top: 2%;
+	opacity: 0;
+	background-color: rgba(255, 255, 255, 0.5);
+	transition: 1s;
+}
+
+#posts-principais .post:hover .titulo {
+  position: absolute;
+  padding: 10px;
+  top: 6px;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.5);
   text-shadow: 1px 1px black;
 }
 
@@ -157,10 +181,15 @@ main {
   padding: 1em;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+  position: sticky;
+  top: 0;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
 #tags h1 {
   margin-bottom: 1em;
+  text-shadow: 2px 2px #000;
 }
 
 .tag-1,
@@ -175,12 +204,49 @@ main {
   text-shadow: 1px 1px black;
 }
 
+.tag-1:active,
+.tag-2:active,
+.tag-3:active {
+  position: relative;
+  top: -2px;
+  left: -2px;
+  cursor:pointer;
+}
+
 .tag-2 {
   font-size: 125%;
 }
 
 .tag-3 {
   font-size: 150%;
+}
+
+.boo {
+  position: absolute;
+  width: 60;
+  opacity: 0.3;
+}
+
+.boo:hover {
+  position: absolute;
+  width: 300px;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+.boo-1 {
+  left: 10%;
+  top: 0%;
+}
+
+.boo-2 {
+  left: 70%;
+  top: 10%;
+}
+
+.boo-3 {
+  right: 0%;
+  bottom: 10%;
 }
 
 footer {
@@ -279,4 +345,7 @@ footer .texto-rodape {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
 }
